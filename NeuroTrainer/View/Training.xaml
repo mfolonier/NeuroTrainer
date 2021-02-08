@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:NeuroTrainer.Controls"
+             x:Class="NeuroTrainer.View.Training">
+    <ContentPage.Content>
+        <StackLayout>
+
+                <Frame  x:Name="FrameboxColor" 
+                    WidthRequest="80"
+                    HeightRequest="500"                    
+                    >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="TapColor"  NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+
+                </Frame>
+                <Frame  x:Name="FrameboxName" 
+                    WidthRequest="80"
+                    HeightRequest="500"                    
+                    >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="TapName"  NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <Label x:Name="TxtBox" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+
+                    </Label>
+
+                </Frame>
+                <Frame  x:Name="FrameboxNumber" 
+                    WidthRequest="80"
+                    HeightRequest="500" 
+                    BackgroundColor="Black"
+                    >
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer   Tapped="TapNumber"  NumberOfTapsRequired="1"/>
+                    </Frame.GestureRecognizers>
+                    <Label x:Name="TxtNumber" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+
+                    </Label>
+
+                </Frame>
+
+                <Image x:Name="ImageArrow" BackgroundColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapImage" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+           
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <controls:AdControlView Grid.Row="0" Grid.Column ="0"  AdUnitId="ca-app-pub-9333529972312529/9787674777" HorizontalOptions="FillAndExpand" TranslationX="-10"/>
+
+            </Grid>
+      
+        </StackLayout>
+ 
+    </ContentPage.Content>
+</ContentPage>

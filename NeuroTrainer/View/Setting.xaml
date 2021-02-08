@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls="clr-namespace:NeuroTrainer.Controls"
+             mc:Ignorable="d"
+             x:Class="NeuroTrainer.View.Setting"
+              Title="NeuroTrainer" >
+
+    <ContentPage.ToolbarItems  >
+        
+        <ToolbarItem x:Name="iconlng" IconImageSource="{Binding Lngicon}"  Command="{Binding Lngselect}" />
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RelativeLayout>
+            
+            <Path Aspect="Uniform" Scale="0.8" TranslationX="150" Fill="#afcc7d" Rotation="-180" Data="m203.69888,281.53453l-2.32548,-7.90686c0.6815,-0.58074 1.32116,-1.20214 1.92495,-1.86709l8.13317,2.2591c0.85786,-1.21376 1.59615,-2.50302 2.25673,-3.84164l-6.05281,-5.69131c0.28994,-0.83627 0.54102,-1.68706 0.72036,-2.56399l8.15709,-1.98615c0.05978,-0.73174 0.11657,-1.46639 0.11657,-2.21555s-0.05978,-1.4809 -0.11657,-2.21264l-8.15709,-1.98615c-0.18233,-0.87693 -0.43341,-1.72772 -0.72036,-2.56399l6.0558,-5.69131c-0.66357,-1.33572 -1.40186,-2.62788 -2.25972,-3.84164l-8.13317,2.2562c-0.6008,-0.66205 -1.24345,-1.28345 -1.92495,-1.8671l2.32548,-7.90395c-1.24942,-0.83047 -2.57954,-1.55059 -3.95749,-2.19232l-5.85852,5.88296c-0.85786,-0.28166 -1.73663,-0.52267 -2.63932,-0.6998l-2.04152,-7.92718c-0.75622,-0.05517 -1.50946,-0.11325 -2.28063,-0.11325s-1.52441,0.05808 -2.27765,0.11325l-2.04451,7.92718c-0.90269,0.17713 -1.77848,0.41814 -2.63932,0.6998l-5.85852,-5.88296c-1.37496,0.65044 -2.70209,1.36766 -3.95151,2.20103l2.32548,7.90395c-0.68151,0.58075 -1.32415,1.20505 -1.92196,1.8642l-8.13616,-2.2591c-0.85786,1.21375 -1.59615,2.50591 -2.25673,3.84453l6.0558,5.69131c-0.28695,0.83628 -0.53803,1.68707 -0.72036,2.564l-8.16008,1.98615c-0.05679,0.73174 -0.11657,1.46638 -0.11657,2.21264s0.05978,1.4809 0.11657,2.21555l8.16008,1.98615c0.18233,0.87692 0.43341,1.72772 0.72036,2.56399l-6.0558,5.69131c0.66058,1.33572 1.39887,2.62788 2.25673,3.84163l8.13616,-2.2591c0.59781,0.66496 1.24045,1.28345 1.92196,1.8671l-2.32548,7.90686c1.24942,0.83046 2.57954,1.54768 3.9545,2.19231l5.85852,-5.88295c0.86084,0.28166 1.73663,0.52557 2.63932,0.6998l2.04451,7.92427c0.75323,0.05808 1.50946,0.11325 2.28063,0.11325s1.52441,-0.05808 2.28064,-0.11325l2.04152,-7.92427c0.90269,-0.17713 1.78146,-0.42105 2.63932,-0.6998l5.85852,5.88295c1.37197,-0.65043 2.70209,-1.36765 3.95151,-2.19812zm-16.7745,-13.94081c-5.61042,0 -10.15974,-4.41947 -10.15974,-9.86977s4.54932,-9.86688 10.15974,-9.86688s10.15676,4.41658 10.15676,9.86688s-4.54633,9.86977 -10.15676,9.86977zm46.30621,20.631c0.05679,-1.58834 -0.17934,-3.20572 -0.68748,-4.80277l3.71837,-5.14831c-0.56194,-1.0163 -1.19562,-1.98034 -1.91598,-2.85727l-6.34274,1.29216c-1.27931,-1.05696 -2.73497,-1.88162 -4.29226,-2.47107l-1.8263,-6.03686c-1.15377,-0.19745 -2.32249,-0.30489 -3.50615,-0.30779l-2.91132,5.62162c-0.83395,0.1568 -1.66789,0.37168 -2.48688,0.67657c-0.76819,0.28456 -1.48556,0.63882 -2.17304,1.02501l-5.99601,-2.37815c-0.88775,0.76078 -1.69778,1.58253 -2.43009,2.47398l2.71106,5.71454c-0.77416,1.43734 -1.30621,2.98503 -1.55131,4.60241l-5.65228,3.07795c0.05679,1.12665 0.22717,2.2533 0.49021,3.38285l6.28894,1.50703c0.69046,1.52156 1.61707,2.88341 2.73796,4.0449l-1.05215,6.20817c0.9565,0.66786 1.97277,1.2428 3.0279,1.74224l5.12621,-3.83292c1.60212,0.40942 3.27897,0.56622 4.96778,0.43556l4.34009,4.66629c0.5978,-0.16551 1.19262,-0.34264 1.78146,-0.56042c0.52309,-0.19165 1.01628,-0.41814 1.50947,-0.64753l0.11059,-6.28658c1.36002,-0.98436 2.51976,-2.16908 3.44338,-3.5019l6.45931,-0.3891c0.45434,-1.04243 0.83394,-2.12553 1.09997,-3.23765l-4.98871,-4.01296zm-12.44337,5.82779c-3.58984,1.32991 -7.60711,-0.41814 -8.97908,-3.90552s0.42743,-7.39289 4.01727,-8.72571c3.58984,-1.3299 7.61309,0.41814 8.98506,3.90552c1.36898,3.48738 -0.43341,7.3929 -4.02325,8.72571z"/>
+            <Path  TranslationY="300" Aspect="Uniform" Fill="#afcc7d" Data="m203.69888,281.53453l-2.32548,-7.90686c0.6815,-0.58074 1.32116,-1.20214 1.92495,-1.86709l8.13317,2.2591c0.85786,-1.21376 1.59615,-2.50302 2.25673,-3.84164l-6.05281,-5.69131c0.28994,-0.83627 0.54102,-1.68706 0.72036,-2.56399l8.15709,-1.98615c0.05978,-0.73174 0.11657,-1.46639 0.11657,-2.21555s-0.05978,-1.4809 -0.11657,-2.21264l-8.15709,-1.98615c-0.18233,-0.87693 -0.43341,-1.72772 -0.72036,-2.56399l6.0558,-5.69131c-0.66357,-1.33572 -1.40186,-2.62788 -2.25972,-3.84164l-8.13317,2.2562c-0.6008,-0.66205 -1.24345,-1.28345 -1.92495,-1.8671l2.32548,-7.90395c-1.24942,-0.83047 -2.57954,-1.55059 -3.95749,-2.19232l-5.85852,5.88296c-0.85786,-0.28166 -1.73663,-0.52267 -2.63932,-0.6998l-2.04152,-7.92718c-0.75622,-0.05517 -1.50946,-0.11325 -2.28063,-0.11325s-1.52441,0.05808 -2.27765,0.11325l-2.04451,7.92718c-0.90269,0.17713 -1.77848,0.41814 -2.63932,0.6998l-5.85852,-5.88296c-1.37496,0.65044 -2.70209,1.36766 -3.95151,2.20103l2.32548,7.90395c-0.68151,0.58075 -1.32415,1.20505 -1.92196,1.8642l-8.13616,-2.2591c-0.85786,1.21375 -1.59615,2.50591 -2.25673,3.84453l6.0558,5.69131c-0.28695,0.83628 -0.53803,1.68707 -0.72036,2.564l-8.16008,1.98615c-0.05679,0.73174 -0.11657,1.46638 -0.11657,2.21264s0.05978,1.4809 0.11657,2.21555l8.16008,1.98615c0.18233,0.87692 0.43341,1.72772 0.72036,2.56399l-6.0558,5.69131c0.66058,1.33572 1.39887,2.62788 2.25673,3.84163l8.13616,-2.2591c0.59781,0.66496 1.24045,1.28345 1.92196,1.8671l-2.32548,7.90686c1.24942,0.83046 2.57954,1.54768 3.9545,2.19231l5.85852,-5.88295c0.86084,0.28166 1.73663,0.52557 2.63932,0.6998l2.04451,7.92427c0.75323,0.05808 1.50946,0.11325 2.28063,0.11325s1.52441,-0.05808 2.28064,-0.11325l2.04152,-7.92427c0.90269,-0.17713 1.78146,-0.42105 2.63932,-0.6998l5.85852,5.88295c1.37197,-0.65043 2.70209,-1.36765 3.95151,-2.19812zm-16.7745,-13.94081c-5.61042,0 -10.15974,-4.41947 -10.15974,-9.86977s4.54932,-9.86688 10.15974,-9.86688s10.15676,4.41658 10.15676,9.86688s-4.54633,9.86977 -10.15676,9.86977zm46.30621,20.631c0.05679,-1.58834 -0.17934,-3.20572 -0.68748,-4.80277l3.71837,-5.14831c-0.56194,-1.0163 -1.19562,-1.98034 -1.91598,-2.85727l-6.34274,1.29216c-1.27931,-1.05696 -2.73497,-1.88162 -4.29226,-2.47107l-1.8263,-6.03686c-1.15377,-0.19745 -2.32249,-0.30489 -3.50615,-0.30779l-2.91132,5.62162c-0.83395,0.1568 -1.66789,0.37168 -2.48688,0.67657c-0.76819,0.28456 -1.48556,0.63882 -2.17304,1.02501l-5.99601,-2.37815c-0.88775,0.76078 -1.69778,1.58253 -2.43009,2.47398l2.71106,5.71454c-0.77416,1.43734 -1.30621,2.98503 -1.55131,4.60241l-5.65228,3.07795c0.05679,1.12665 0.22717,2.2533 0.49021,3.38285l6.28894,1.50703c0.69046,1.52156 1.61707,2.88341 2.73796,4.0449l-1.05215,6.20817c0.9565,0.66786 1.97277,1.2428 3.0279,1.74224l5.12621,-3.83292c1.60212,0.40942 3.27897,0.56622 4.96778,0.43556l4.34009,4.66629c0.5978,-0.16551 1.19262,-0.34264 1.78146,-0.56042c0.52309,-0.19165 1.01628,-0.41814 1.50947,-0.64753l0.11059,-6.28658c1.36002,-0.98436 2.51976,-2.16908 3.44338,-3.5019l6.45931,-0.3891c0.45434,-1.04243 0.83394,-2.12553 1.09997,-3.23765l-4.98871,-4.01296zm-12.44337,5.82779c-3.58984,1.32991 -7.60711,-0.41814 -8.97908,-3.90552s0.42743,-7.39289 4.01727,-8.72571c3.58984,-1.3299 7.61309,0.41814 8.98506,3.90552c1.36898,3.48738 -0.43341,7.3929 -4.02325,8.72571z"/>
+            <StackLayout>
+                               
+               
+                    <Grid 
+                         x:Name="Grid"
+                         VerticalOptions="Start"
+                         RowSpacing="3"
+                         HorizontalOptions="Start">
+                        
+                        <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                      
+                        <Label Text="{Binding TxtOpt}" TextColor="Black" FontSize="Large" Grid.Row="0" Grid.Column="0" />
+
+                        <Picker Title="{Binding TxtPicker}"
+                            x:Name="PickerMode"
+                            ItemsSource="{Binding Setlist}"
+                            
+                            ItemDisplayBinding="{Binding Type}"
+                            SelectedItem="{Binding SelectedMode , Mode=TwoWay}"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            
+                        />
+                        <Picker Title="{Binding TxtPickerColor}"
+                                x:Name="PickerColor"
+                                ItemsSource="{Binding ColorList}"
+                                ItemDisplayBinding="{Binding TxtList}"
+                                SelectedItem="{Binding SelectedColor, Mode=TwoWay}"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                HorizontalOptions="Start"
+                                                    
+                        />
+
+                        <CollectionView ItemsSource="{Binding ColorSelected}" SelectionMode="Single" SelectedItem="{Binding Colordelete}" SelectionChangedCommand="{Binding RemoveColor}" ItemsLayout="VerticalList" Grid.Row="2" Grid.Column="1" Grid.RowSpan="5"  >
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <ScrollView VerticalScrollBarVisibility="Default" >
+                                        <Grid Padding="5">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                            
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Label Text="{Binding TxtList}"
+                                                 FontAttributes="Bold"
+                                                 Grid.Column="0"                          
+                                        />
+
+                                            <Rectangle WidthRequest="20" HeightRequest="10" BackgroundColor="{Binding BGColor}"  Stroke="Black"  Grid.Column="1"/>
+
+
+                                        </Grid>
+                                    </ScrollView>
+                                </DataTemplate>
+
+                            </CollectionView.ItemTemplate>
+                            <CollectionView.EmptyView>
+                                <StackLayout HorizontalOptions="FillAndExpand"
+                                     VerticalOptions="FillAndExpand">
+                                    <Label FontSize="19"
+                                   Text="{Binding EmptyList}"></Label>
+                                </StackLayout>
+                            </CollectionView.EmptyView>
+
+                        </CollectionView>
+
+
+                        <Entry x:Name="Interval" Text="{Binding Interval, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="180"  Placeholder="{Binding Txtinterval}"  TextColor="Black" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="2" />
+                        <Entry x:Name="Rest" Text="{Binding Rest, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="100" Placeholder="{Binding Textrest}" BackgroundColor="Transparent" TextColor="Black" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="3"/>
+                        <Entry x:Name="Delay" Text="{Binding Delay, Mode=TwoWay}" Keyboard="Numeric" WidthRequest="80" Placeholder="{Binding Txtdelay}" BackgroundColor="Transparent" TextColor="Black" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="4"/>
+                        <Entry x:Name="Rounds" Text="{Binding Rounds, Mode=TwoWay}" Keyboard="Numeric" Placeholder="{Binding Txtround}" BackgroundColor="Transparent"  TextColor="Black" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="5"/>
+                        <Entry x:Name="Number" Text="{Binding Number, Mode=TwoWay}" Keyboard="Numeric" Placeholder="{Binding Txtnumber}" BackgroundColor="Transparent" TextColor="Black" VerticalOptions="Start" HorizontalOptions="Start" Grid.Row="6" />
+                        <Switch x:Name="Switch" Toggled="Switch_Toggled" HorizontalOptions="Start"  OnColor="#6ca931" Grid.Row="7" Grid.Column="0" ThumbColor="Gray" />
+                        <Label Text="{Binding Txtsound}"  TranslationX="50" TranslationY="12" HorizontalOptions="Start" Grid.Row="7" Grid.Column="0"/>
+                        <Label Text="{Binding Txttime}" FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="8" Grid.Column="0"/>
+                        <Label Text="{Binding TimeWorkString}" TranslationX="100"  FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="8" Grid.Column="0"/>
+
+                        <Button x:Name="BtnAdd" Text="{Binding BtnAddtxt}" Command="{Binding CmdAdd}" HorizontalOptions="StartAndExpand" VerticalOptions="Fill" BorderColor="Black" BorderWidth="1" BackgroundColor="#6ca931" CornerRadius="15" Grid.Row="8" Grid.Column="1"/>
+                        <Button x:Name="BtnClear" Text="{Binding BtnSettxt}" Command="{Binding CmdClear}" HorizontalOptions="Start" VerticalOptions="Fill" BorderColor="Black" BorderWidth="1" BackgroundColor="#6ca931" CornerRadius="15" Grid.Row="9" Grid.Column="0" />
+                        <Button Text="{Binding BtnStarttxt}" FontSize="Body" FontAttributes="Bold" Command="{Binding cmdStart}" BorderColor="Black" BorderWidth="1" BackgroundColor="#27AE60" HorizontalOptions="StartAndExpand" VerticalOptions="Center" CornerRadius="15" Grid.Row="9" Grid.Column="1" />
+
+                        <controls:AdControlView Grid.Row="10" Grid.ColumnSpan="2"  AdUnitId="ca-app-pub-9333529972312529/9787674777" HorizontalOptions="StartAndExpand"/>
+
+
+
+                     </Grid>
+                 
+                
+            </StackLayout>
+           
+        </RelativeLayout>
+
+    </ContentPage.Content>
+</ContentPage>

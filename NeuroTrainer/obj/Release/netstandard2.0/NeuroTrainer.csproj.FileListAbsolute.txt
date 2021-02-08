@@ -1,0 +1,15 @@
+C:\Xamarin\NeuroTrainer\NeuroTrainer\bin\Release\netstandard2.0\NeuroTrainer.deps.json
+C:\Xamarin\NeuroTrainer\NeuroTrainer\bin\Release\netstandard2.0\NeuroTrainer.dll
+C:\Xamarin\NeuroTrainer\NeuroTrainer\bin\Release\netstandard2.0\ref\NeuroTrainer.dll
+C:\Xamarin\NeuroTrainer\NeuroTrainer\bin\Release\netstandard2.0\NeuroTrainer.pdb
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\View\Setting.xaml.g.cs
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\View\Training.xaml.g.cs
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\NeuroTrainer.AssemblyInfoInputs.cache
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\NeuroTrainer.AssemblyInfo.cs
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\XamlC.stamp
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\NeuroTrainer.dll
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\ref\NeuroTrainer.dll
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\NeuroTrainer.pdb
+C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Release\netstandard2.0\NeuroTrainer.csprojAssemblyReference.cache
