@@ -312,7 +312,7 @@ namespace NeuroTrainer.ViewModel
           }
 
         private Command _cmdStart;  // init traingin 
-        public Command cmdStart
+        public Command CmdStart
         {
             get
             {
@@ -353,7 +353,7 @@ namespace NeuroTrainer.ViewModel
         }
 
         private bool Config { get; set; } // config color list 
-        public static bool _runThread { get; set; } // to back page 
+        public static bool RunThread { get; set; } // to back page 
 
 
         private ObservableCollection<Modos> _setlist;  // list of works 
@@ -613,6 +613,9 @@ namespace NeuroTrainer.ViewModel
             }
         }
 
+
+        public TimeSpan TimeCollect { get; set; }
+
         public ViewModel()
         {
             Setlist = new ObservableCollection<Modos>() {
@@ -626,24 +629,25 @@ namespace NeuroTrainer.ViewModel
              };
             ColorList = new List<ColorPalet>()
             {
-                new ColorPalet(){ BGColor = Color.Green, NameColor = "Verde" ,TxtColor = Color.Purple, TxtColorName = "Violeta" , TxtPalet = "Violeta" , NameColorEng ="Green" , TxtColorNameEng = "Purple", TxtPaleteng = "Purple" , TxtList = "Green"},
-                new ColorPalet(){ BGColor = Color.White, NameColor = "Blanco" ,TxtColor = Color.Red , TxtColorName = "Rojo" , TxtPalet = "Celeste"  ,NameColorEng ="White" , TxtColorNameEng = "Red", TxtPaleteng = "Light Blue" , TxtList ="White"},
-                new ColorPalet(){ BGColor = Color.Blue , NameColor = "Azul" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Negro",NameColorEng ="Blue" , TxtColorNameEng = "Purple", TxtPaleteng = "Black" , TxtList ="Blue" },
-                new ColorPalet(){ BGColor = Color.Gray, NameColor = "Gris" ,TxtColor = Color.Green ,TxtColorName = "Verde" , TxtPalet = "Fucsia",NameColorEng ="Gray" , TxtColorNameEng = "Green", TxtPaleteng = "Fuchsia" , TxtList = "Gray"},
-                new ColorPalet(){ BGColor = Color.LightBlue, NameColor = "Celeste" ,TxtColor = Color.Orange ,TxtColorName = "Naranja" , TxtPalet = "Blanco",NameColorEng ="Light Blue" , TxtColorNameEng = "Orange", TxtPaleteng = "White" , TxtList = "Light Blue"},
-                new ColorPalet(){ BGColor = Color.Fuchsia, NameColor = "Fucsia" ,TxtColor = Color.Yellow ,TxtColorName = "Amarillo" , TxtPalet = "Azul",NameColorEng ="Fuchsia" , TxtColorNameEng = "Yellow", TxtPaleteng = "Blue", TxtList = "Fuchsia"},
-                new ColorPalet(){ BGColor = Color.Purple, NameColor = "Púrpura" ,TxtColor = Color.Black ,TxtColorName = "Negro" , TxtPalet = "Gris",NameColorEng ="Purple" , TxtColorNameEng = "Black", TxtPaleteng = "Gray", TxtList = "Purple"},
-                new ColorPalet(){ BGColor = Color.Yellow, NameColor = "Amarillo" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Verde",NameColorEng ="Yellow" , TxtColorNameEng = "Purple", TxtPaleteng = "Green", TxtList = "Yellow"},
-                new ColorPalet(){ BGColor = Color.Orange, NameColor = "Naranja" ,TxtColor = Color.Gray , TxtColorName = "Gris" ,TxtPalet = "Rosa",NameColorEng ="Orange" , TxtColorNameEng = "Gray", TxtPaleteng = "Pink", TxtList = "Orange"},
-                new ColorPalet(){ BGColor = Color.DarkViolet, NameColor = "Violeta" ,TxtColor = Color.Blue ,TxtColorName = "Azul" , TxtPalet = "Naranja",NameColorEng ="Violet" , TxtColorNameEng = "Blue", TxtPaleteng = "Orange" , TxtList = "Violet"},
-                new ColorPalet(){ BGColor = Color.Red,NameColor = "Rojo" , TxtColor = Color.Blue , TxtColorName = "Azul" ,TxtPalet = "Amarillo",NameColorEng ="Red" , TxtColorNameEng = "Blue", TxtPaleteng = "Yellow", TxtList = "Red"},
-                new ColorPalet(){ BGColor = Color.Black, NameColor = "Negro" ,TxtColor = Color.White ,TxtColorName = "Blanco" , TxtPalet = "Rojo",NameColorEng ="Black" , TxtColorNameEng = "White", TxtPaleteng = "Red", TxtList = "Black"}
+                            new ColorPalet(){ BGColor = Color.Red,NameColor = "Rojo" , TxtColor = Color.Blue , TxtColorName = "Azul" ,TxtPalet = "Amarillo",NameColorEng ="Red" , TxtColorNameEng = "Blue", TxtPaleteng = "Yellow", TxtList = "Red"},
+                            new ColorPalet(){ BGColor = Color.Green, NameColor = "Verde" ,TxtColor = Color.Purple, TxtColorName = "Violeta" , TxtPalet = "Violeta" , NameColorEng ="Green" , TxtColorNameEng = "Purple", TxtPaleteng = "Purple" , TxtList = "Green"},
+                            new ColorPalet(){ BGColor = Color.Blue , NameColor = "Azul" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Negro",NameColorEng ="Blue" , TxtColorNameEng = "Purple", TxtPaleteng = "Black" , TxtList ="Blue" },
+                            new ColorPalet(){ BGColor = Color.Yellow, NameColor = "Amarillo" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Verde",NameColorEng ="Yellow" , TxtColorNameEng = "Purple", TxtPaleteng = "Green", TxtList = "Yellow"},
+                            new ColorPalet(){ BGColor = Color.Orange, NameColor = "Naranja" ,TxtColor = Color.Gray , TxtColorName = "Gris" ,TxtPalet = "Rosa",NameColorEng ="Orange" , TxtColorNameEng = "Gray", TxtPaleteng = "Pink", TxtList = "Orange"},
+                            new ColorPalet(){ BGColor = Color.DarkViolet, NameColor = "Violeta" ,TxtColor = Color.Blue ,TxtColorName = "Azul" , TxtPalet = "Naranja",NameColorEng ="Violet" , TxtColorNameEng = "Blue", TxtPaleteng = "Orange" , TxtList = "Violet"},
+                            new ColorPalet(){ BGColor = Color.Fuchsia, NameColor = "Fucsia" ,TxtColor = Color.Yellow ,TxtColorName = "Amarillo" , TxtPalet = "Azul",NameColorEng ="Fuchsia" , TxtColorNameEng = "Yellow", TxtPaleteng = "Blue", TxtList = "Fuchsia"},
+                            new ColorPalet(){ BGColor = Color.Purple, NameColor = "Púrpura" ,TxtColor = Color.Black ,TxtColorName = "Negro" , TxtPalet = "Gris",NameColorEng ="Purple" , TxtColorNameEng = "Black", TxtPaleteng = "Gray", TxtList = "Purple"},
+                            new ColorPalet(){ BGColor = Color.LightBlue, NameColor = "Celeste" ,TxtColor = Color.Orange ,TxtColorName = "Naranja" , TxtPalet = "Blanco",NameColorEng ="Light Blue" , TxtColorNameEng = "Orange", TxtPaleteng = "White" , TxtList = "Light Blue"},
+                            new ColorPalet(){ BGColor = Color.Gray, NameColor = "Gris" ,TxtColor = Color.Green ,TxtColorName = "Verde" , TxtPalet = "Fucsia",NameColorEng ="Gray" , TxtColorNameEng = "Green", TxtPaleteng = "Fuchsia" , TxtList = "Gray"},
+                            new ColorPalet(){ BGColor = Color.Black, NameColor = "Negro" ,TxtColor = Color.White ,TxtColorName = "Blanco" , TxtPalet = "Rojo",NameColorEng ="Black" , TxtColorNameEng = "White", TxtPaleteng = "Red", TxtList = "Black"},
+                            new ColorPalet(){ BGColor = Color.White, NameColor = "Blanco" ,TxtColor = Color.Red , TxtColorName = "Rojo" , TxtPalet = "Celeste"  ,NameColorEng ="White" , TxtColorNameEng = "Red", TxtPaleteng = "Light Blue" , TxtList ="White"}
             };
            
             ModesList = new List<ListWork>();
             SelectedColorList = new List<ColorPalet>();
             ColorSelected = new ObservableCollection<ColorPalet>();
-            TimeWork = 0;
+            TimeCollect = new TimeSpan(0, 0, 0);
+            TimeWorkString = TimeCollect.ToString(@"hh\:mm\:ss");
             Config = false;
             ColorWork.Mix = false;
             /// Language default configuration equal English
@@ -668,7 +672,8 @@ namespace NeuroTrainer.ViewModel
 
         public async Task LoadListAsync()
         {
-            TimeWork = 0;
+            int i; 
+            TimeCollect = new TimeSpan(0, 0, 0);
             try
             {
                 if (Int32.Parse(Delay) > Int32.Parse(Interval))
@@ -680,29 +685,44 @@ namespace NeuroTrainer.ViewModel
 
 
 
-                    ModesList.Add(new ListWork() { Time = Int32.Parse(Interval) * 1000, Rests = Int32.Parse(Rest) * 1000, Value = Mymode, delay = int.Parse(Delay) * 1000, SwitchState = StateSwitch });
+                    ModesList.Add(new ListWork()
+                    {
 
+                        Time = Int32.Parse(Interval) * 1000,
+                        Rests = Int32.Parse(Rest) * 1000,
+                        Delay = Int32.Parse(Delay) * 1000,
+                        Time2 = TimeSpan.FromSeconds(Double.Parse(Interval)),
+                        Rests2 = TimeSpan.FromSeconds(Double.Parse(Rest)),
+                        Delay2 = TimeSpan.FromSeconds(Double.Parse(Delay)),
+                        Value = Mymode,
+                        SwitchState = StateSwitch
+                    }
+                      );
 
                     if (Interval != null && Rest != null)
                     {
                      
                         foreach (ListWork list in ModesList)
                         {
-                            TimeWork += list.Time/1000 + list.Rests/1000;
+                            for (i = 0; i < int.Parse(Rounds); i++)
+                            {
+                                TimeCollect += list.Time2;
+                                TimeCollect += list.Rests2;
+                            }
 
                         }
-                        TimeWork = TimeWork * int.Parse(Rounds);
-                        TimeSpan timework = TimeSpan.FromSeconds(TimeWork);
-                        TimeWorkString = timework.ToString("hh':'mm':'ss");
+                        TimeWorkString = TimeCollect.ToString(@"hh\:mm\:ss");
                     }
 
-                    
+
 
                     foreach (ListWork list in ModesList)
                     {
-                        Debug.WriteLine($"Lista tiene: {list.Time} //// ");
-                        Debug.WriteLine($"Lista tiene: {list.Rests} //// ");
-                        Debug.WriteLine($"Lista tiene: {list.Value} //// ");
+                        Debug.WriteLine($"Lista tiene: {list.Time}  Work time//// ");
+                        Debug.WriteLine($"Lista tiene: {list.Rests} Rest //// ");
+                        Debug.WriteLine($"Lista tiene: {list.Delay} Delay //// ");
+                        Debug.WriteLine($"Lista tiene: {list.Value}  Work//// ");
+
 
                         Debug.WriteLine($"Lista tiene el switch en estado: {list.SwitchState} //// ");
 
@@ -734,12 +754,13 @@ namespace NeuroTrainer.ViewModel
             }
 
 
-            TimeWorkString = "";
-
+            TimeCollect = new TimeSpan(0, 0, 0);
+            TimeWorkString = TimeCollect.ToString(@"hh\:mm\:ss");
             Interval = "";
             Delay = "";
             Rest = "";
             Number = "";
+            Rounds = "";
             Config = false;
             if(SelectedColorList != null)
             SelectedColorList.Clear();
@@ -784,25 +805,20 @@ namespace NeuroTrainer.ViewModel
                           };
                         ColorList = new List<ColorPalet>()
                         {
-                            new ColorPalet(){ BGColor = Color.Green, NameColor = "Verde" ,TxtColor = Color.Purple, TxtColorName = "Violeta" , TxtPalet = "Violeta" , NameColorEng ="Green" , TxtColorNameEng = "Purple", TxtPaleteng = "Purple" , TxtList = "Green"},
-                            new ColorPalet(){ BGColor = Color.White, NameColor = "Blanco" ,TxtColor = Color.Red , TxtColorName = "Rojo" , TxtPalet = "Celeste"  ,NameColorEng ="White" , TxtColorNameEng = "Red", TxtPaleteng = "Light Blue" , TxtList ="White"},
+                            new ColorPalet(){ BGColor = Color.Red,NameColor = "Rojo" , TxtColor = Color.Blue , TxtColorName = "Azul" ,TxtPalet = "Amarillo",NameColorEng ="Red" , TxtColorNameEng = "Blue", TxtPaleteng = "Yellow", TxtList = "Red"},
+                            new ColorPalet(){ BGColor = Color.Green, NameColor = "Verde" ,TxtColor = Color.Purple, TxtColorName = "Violeta" , TxtPalet = "Violeta" , NameColorEng ="Green" , TxtColorNameEng = "Purple", TxtPaleteng = "Purple" , TxtList = "Green"},                            
                             new ColorPalet(){ BGColor = Color.Blue , NameColor = "Azul" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Negro",NameColorEng ="Blue" , TxtColorNameEng = "Purple", TxtPaleteng = "Black" , TxtList ="Blue" },
-                            new ColorPalet(){ BGColor = Color.Gray, NameColor = "Gris" ,TxtColor = Color.Green ,TxtColorName = "Verde" , TxtPalet = "Fucsia",NameColorEng ="Gray" , TxtColorNameEng = "Green", TxtPaleteng = "Fuchsia" , TxtList = "Gray"},
-                            new ColorPalet(){ BGColor = Color.LightBlue, NameColor = "Celeste" ,TxtColor = Color.Orange ,TxtColorName = "Naranja" , TxtPalet = "Blanco",NameColorEng ="Light Blue" , TxtColorNameEng = "Orange", TxtPaleteng = "White" , TxtList = "Light Blue"},
-                            new ColorPalet(){ BGColor = Color.Fuchsia, NameColor = "Fucsia" ,TxtColor = Color.Yellow ,TxtColorName = "Amarillo" , TxtPalet = "Azul",NameColorEng ="Fuchsia" , TxtColorNameEng = "Yellow", TxtPaleteng = "Blue", TxtList = "Fuchsia"},
-                            new ColorPalet(){ BGColor = Color.Purple, NameColor = "Púrpura" ,TxtColor = Color.Black ,TxtColorName = "Negro" , TxtPalet = "Gris",NameColorEng ="Purple" , TxtColorNameEng = "Black", TxtPaleteng = "Gray", TxtList = "Purple"},
                             new ColorPalet(){ BGColor = Color.Yellow, NameColor = "Amarillo" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Verde",NameColorEng ="Yellow" , TxtColorNameEng = "Purple", TxtPaleteng = "Green", TxtList = "Yellow"},
                             new ColorPalet(){ BGColor = Color.Orange, NameColor = "Naranja" ,TxtColor = Color.Gray , TxtColorName = "Gris" ,TxtPalet = "Rosa",NameColorEng ="Orange" , TxtColorNameEng = "Gray", TxtPaleteng = "Pink", TxtList = "Orange"},
                             new ColorPalet(){ BGColor = Color.DarkViolet, NameColor = "Violeta" ,TxtColor = Color.Blue ,TxtColorName = "Azul" , TxtPalet = "Naranja",NameColorEng ="Violet" , TxtColorNameEng = "Blue", TxtPaleteng = "Orange" , TxtList = "Violet"},
-                            new ColorPalet(){ BGColor = Color.Red,NameColor = "Rojo" , TxtColor = Color.Blue , TxtColorName = "Azul" ,TxtPalet = "Amarillo",NameColorEng ="Red" , TxtColorNameEng = "Blue", TxtPaleteng = "Yellow", TxtList = "Red"},
-                            new ColorPalet(){ BGColor = Color.Black, NameColor = "Negro" ,TxtColor = Color.White ,TxtColorName = "Blanco" , TxtPalet = "Rojo",NameColorEng ="Black" , TxtColorNameEng = "White", TxtPaleteng = "Red", TxtList = "Black"}
+                            new ColorPalet(){ BGColor = Color.Fuchsia, NameColor = "Fucsia" ,TxtColor = Color.Yellow ,TxtColorName = "Amarillo" , TxtPalet = "Azul",NameColorEng ="Fuchsia" , TxtColorNameEng = "Yellow", TxtPaleteng = "Blue", TxtList = "Fuchsia"},
+                            new ColorPalet(){ BGColor = Color.Purple, NameColor = "Púrpura" ,TxtColor = Color.Black ,TxtColorName = "Negro" , TxtPalet = "Gris",NameColorEng ="Purple" , TxtColorNameEng = "Black", TxtPaleteng = "Gray", TxtList = "Purple"},
+                            new ColorPalet(){ BGColor = Color.LightBlue, NameColor = "Celeste" ,TxtColor = Color.Orange ,TxtColorName = "Naranja" , TxtPalet = "Blanco",NameColorEng ="Light Blue" , TxtColorNameEng = "Orange", TxtPaleteng = "White" , TxtList = "Light Blue"},
+                            new ColorPalet(){ BGColor = Color.Gray, NameColor = "Gris" ,TxtColor = Color.Green ,TxtColorName = "Verde" , TxtPalet = "Fucsia",NameColorEng ="Gray" , TxtColorNameEng = "Green", TxtPaleteng = "Fuchsia" , TxtList = "Gray"},
+                            new ColorPalet(){ BGColor = Color.Black, NameColor = "Negro" ,TxtColor = Color.White ,TxtColorName = "Blanco" , TxtPalet = "Rojo",NameColorEng ="Black" , TxtColorNameEng = "White", TxtPaleteng = "Red", TxtList = "Black"},
+                            new ColorPalet(){ BGColor = Color.White, NameColor = "Blanco" ,TxtColor = Color.Red , TxtColorName = "Rojo" , TxtPalet = "Celeste"  ,NameColorEng ="White" , TxtColorNameEng = "Red", TxtPaleteng = "Light Blue" , TxtList ="White"}
+
                         };
-
-
-
-
-                        Debug.WriteLine($"Idioma Ingles");
-
 
 
                         break;
@@ -836,18 +852,18 @@ namespace NeuroTrainer.ViewModel
                           };
                         ColorList = new List<ColorPalet>()
                         {
-                            new ColorPalet(){ BGColor = Color.Green, NameColor = "Verde" ,TxtColor = Color.Purple, TxtColorName = "Violeta" , TxtPalet = "Violeta" , NameColorEng ="Green" , TxtColorNameEng = "Purple", TxtPaleteng = "Purple" , TxtList = "Verde"},
-                            new ColorPalet(){ BGColor = Color.White, NameColor = "Blanco" ,TxtColor = Color.Red , TxtColorName = "Rojo" , TxtPalet = "Celeste"  ,NameColorEng ="White" , TxtColorNameEng = "Red", TxtPaleteng = "Light Blue" , TxtList ="Blanco"},
-                            new ColorPalet(){ BGColor = Color.Blue , NameColor = "Azul" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Negro",NameColorEng ="Blue" , TxtColorNameEng = "Purple", TxtPaleteng = "Black" , TxtList ="Azul" },
-                            new ColorPalet(){ BGColor = Color.Gray, NameColor = "Gris" ,TxtColor = Color.Green ,TxtColorName = "Verde" , TxtPalet = "Fucsia",NameColorEng ="Gray" , TxtColorNameEng = "Green", TxtPaleteng = "Fuchsia" , TxtList = "Gris"},
-                            new ColorPalet(){ BGColor = Color.LightBlue, NameColor = "Celeste" ,TxtColor = Color.Orange ,TxtColorName = "Naranja" , TxtPalet = "Blanco",NameColorEng ="Light Blue" , TxtColorNameEng = "Orange", TxtPaleteng = "White" , TxtList = "Celeste"},
-                            new ColorPalet(){ BGColor = Color.Fuchsia, NameColor = "Fucsia" ,TxtColor = Color.Yellow ,TxtColorName = "Amarillo" , TxtPalet = "Azul",NameColorEng ="Fuchsia" , TxtColorNameEng = "Yellow", TxtPaleteng = "Blue", TxtList = "Fucsia"},
-                            new ColorPalet(){ BGColor = Color.Purple, NameColor = "Púrpura" ,TxtColor = Color.Black ,TxtColorName = "Negro" , TxtPalet = "Gris",NameColorEng ="Purple" , TxtColorNameEng = "Black", TxtPaleteng = "Gray", TxtList = "Púrpura"},
-                            new ColorPalet(){ BGColor = Color.Yellow, NameColor = "Amarillo" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Verde",NameColorEng ="Yellow" , TxtColorNameEng = "Purple", TxtPaleteng = "Green", TxtList = "Amarillo"},
-                            new ColorPalet(){ BGColor = Color.Orange, NameColor = "Naranja" ,TxtColor = Color.Gray , TxtColorName = "Gris" ,TxtPalet = "Rosa",NameColorEng ="Orange" , TxtColorNameEng = "Gray", TxtPaleteng = "Pink", TxtList = "Naranja"},
-                            new ColorPalet(){ BGColor = Color.DarkViolet, NameColor = "Violeta" ,TxtColor = Color.Blue ,TxtColorName = "Azul" , TxtPalet = "Naranja",NameColorEng ="Violet" , TxtColorNameEng = "Blue", TxtPaleteng = "Orange" , TxtList = "Violeta"},
-                            new ColorPalet(){ BGColor = Color.Red,NameColor = "Rojo" , TxtColor = Color.Blue , TxtColorName = "Azul" ,TxtPalet = "Amarillo",NameColorEng ="Red" , TxtColorNameEng = "Blue", TxtPaleteng = "Yellow", TxtList = "Rojo"},
-                            new ColorPalet(){ BGColor = Color.Black, NameColor = "Negro" ,TxtColor = Color.White ,TxtColorName = "Blanco" , TxtPalet = "Rojo",NameColorEng ="Black" , TxtColorNameEng = "White", TxtPaleteng = "Red", TxtList = "Negro"}
+                            new ColorPalet(){ BGColor = Color.Red,NameColor = "Rojo" , TxtColor = Color.Blue , TxtColorName = "Azul" ,TxtPalet = "Amarillo",NameColorEng ="Red" , TxtColorNameEng = "Blue", TxtPaleteng = "Yellow", TxtList = "Red"},
+                            new ColorPalet(){ BGColor = Color.Green, NameColor = "Verde" ,TxtColor = Color.Purple, TxtColorName = "Violeta" , TxtPalet = "Violeta" , NameColorEng ="Green" , TxtColorNameEng = "Purple", TxtPaleteng = "Purple" , TxtList = "Green"},
+                            new ColorPalet(){ BGColor = Color.Blue , NameColor = "Azul" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Negro",NameColorEng ="Blue" , TxtColorNameEng = "Purple", TxtPaleteng = "Black" , TxtList ="Blue" },
+                            new ColorPalet(){ BGColor = Color.Yellow, NameColor = "Amarillo" ,TxtColor = Color.Purple , TxtColorName = "Violeta" ,TxtPalet = "Verde",NameColorEng ="Yellow" , TxtColorNameEng = "Purple", TxtPaleteng = "Green", TxtList = "Yellow"},
+                            new ColorPalet(){ BGColor = Color.Orange, NameColor = "Naranja" ,TxtColor = Color.Gray , TxtColorName = "Gris" ,TxtPalet = "Rosa",NameColorEng ="Orange" , TxtColorNameEng = "Gray", TxtPaleteng = "Pink", TxtList = "Orange"},
+                            new ColorPalet(){ BGColor = Color.DarkViolet, NameColor = "Violeta" ,TxtColor = Color.Blue ,TxtColorName = "Azul" , TxtPalet = "Naranja",NameColorEng ="Violet" , TxtColorNameEng = "Blue", TxtPaleteng = "Orange" , TxtList = "Violet"},
+                            new ColorPalet(){ BGColor = Color.Fuchsia, NameColor = "Fucsia" ,TxtColor = Color.Yellow ,TxtColorName = "Amarillo" , TxtPalet = "Azul",NameColorEng ="Fuchsia" , TxtColorNameEng = "Yellow", TxtPaleteng = "Blue", TxtList = "Fuchsia"},
+                            new ColorPalet(){ BGColor = Color.Purple, NameColor = "Púrpura" ,TxtColor = Color.Black ,TxtColorName = "Negro" , TxtPalet = "Gris",NameColorEng ="Purple" , TxtColorNameEng = "Black", TxtPaleteng = "Gray", TxtList = "Purple"},
+                            new ColorPalet(){ BGColor = Color.LightBlue, NameColor = "Celeste" ,TxtColor = Color.Orange ,TxtColorName = "Naranja" , TxtPalet = "Blanco",NameColorEng ="Light Blue" , TxtColorNameEng = "Orange", TxtPaleteng = "White" , TxtList = "Light Blue"},
+                            new ColorPalet(){ BGColor = Color.Gray, NameColor = "Gris" ,TxtColor = Color.Green ,TxtColorName = "Verde" , TxtPalet = "Fucsia",NameColorEng ="Gray" , TxtColorNameEng = "Green", TxtPaleteng = "Fuchsia" , TxtList = "Gray"},
+                            new ColorPalet(){ BGColor = Color.Black, NameColor = "Negro" ,TxtColor = Color.White ,TxtColorName = "Blanco" , TxtPalet = "Rojo",NameColorEng ="Black" , TxtColorNameEng = "White", TxtPaleteng = "Red", TxtList = "Black"},
+                            new ColorPalet(){ BGColor = Color.White, NameColor = "Blanco" ,TxtColor = Color.Red , TxtColorName = "Rojo" , TxtPalet = "Celeste"  ,NameColorEng ="White" , TxtColorNameEng = "Red", TxtPaleteng = "Light Blue" , TxtList ="White"}
                         };
 
                         Debug.WriteLine($"Idioma Español");
@@ -879,7 +895,7 @@ namespace NeuroTrainer.ViewModel
         {
 
             await ((NavigationPage)App.Current.MainPage).PushAsync(new View.Training(App.vm));
-            _runThread = true;
+            RunThread = true;
 
 
             int i, j, rounds;
@@ -909,40 +925,40 @@ namespace NeuroTrainer.ViewModel
                 
                 for (i = 0; i < ModesList.Count; i++)
                 {
-                    if (!_runThread)
+                    if (!RunThread)
                         return;
                     if (ModesList[i].Value == "Flechas" || ModesList[i].Value == "Arrow")
                     {
-                        await ColorWork.ExArrows(ModesList[i].Time, ModesList[i].delay, ModesList[i].SwitchState);
+                        await ColorWork.ExArrows(ModesList[i].Time, ModesList[i].Delay, ModesList[i].SwitchState);
                         await Task.Delay(ModesList[i].Rests);
 
                     }
                     if (ModesList[i].Value == "Numeros" || ModesList[i].Value == "Numbers")
                     {
-                        await ColorWork.ExNumbers(Number, ModesList[i].Time, ModesList[i].delay, ModesList[i].SwitchState);
+                        await ColorWork.ExNumbers(Number, ModesList[i].Time, ModesList[i].Delay, ModesList[i].SwitchState);
                         await Task.Delay(ModesList[i].Rests);
 
                     }
                     if (ModesList[i].Value == "Colores" || ModesList[i].Value == "Colors")
                     {
-                        await ColorWork.ExColorWork(SelectedColorList, ModesList[i].Time, ModesList[i].delay, ModesList[i].SwitchState);
+                        await ColorWork.ExColorWork(SelectedColorList, ModesList[i].Time, ModesList[i].Delay, ModesList[i].SwitchState);
                         await Task.Delay(ModesList[i].Rests);
                     }
                     if (ModesList[i].Value == "Colores y Nombres" || ModesList[i].Value == "Colors & Words")
                     {
-                        await ColorWork.ExColorNameWork(SelectedColorList, ModesList[i].Time, ModesList[i].delay, ModesList[i].SwitchState);
+                        await ColorWork.ExColorNameWork(SelectedColorList, ModesList[i].Time, ModesList[i].Delay, ModesList[i].SwitchState);
                         await Task.Delay(ModesList[i].Rests);
 
                     }
                     if (ModesList[i].Value == "Vocales" || ModesList[i].Value == "Vocals")
                     {
-                        await ColorWork.ExVocals(ModesList[i].Time, ModesList[i].delay, ModesList[i].SwitchState);
+                        await ColorWork.ExVocals(ModesList[i].Time, ModesList[i].Delay, ModesList[i].SwitchState);
                         await Task.Delay(ModesList[i].Rests);
 
                     }
                     if (ModesList[i].Value == "Mixto" || ModesList[i].Value == "Mix")
                     {
-                        await ColorWork.ExMix(SelectedColorList, ModesList[i].Time, ModesList[i].delay, ModesList[i].SwitchState, Number);
+                        await ColorWork.ExMix(SelectedColorList, ModesList[i].Time, ModesList[i].Delay, ModesList[i].SwitchState, Number);
                         await Task.Delay(ModesList[i].Rests);
 
                     }

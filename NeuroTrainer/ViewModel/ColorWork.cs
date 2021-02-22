@@ -19,7 +19,7 @@ namespace NeuroTrainer.ViewModel
         static CancellationTokenSource tokenNumber = new CancellationTokenSource();
         static CancellationTokenSource tokenImage = new CancellationTokenSource();
 
-        public static void newtapColor()
+        public static void NewtapColor()
         {
 
 
@@ -27,7 +27,7 @@ namespace NeuroTrainer.ViewModel
             tokenColor.Cancel();
 
         }
-        public static void newtapName()
+        public static void NewtapName()
         {
 
 
@@ -35,7 +35,7 @@ namespace NeuroTrainer.ViewModel
             tokenName.Cancel();
 
         }
-        public static void newtapNumber()
+        public static void NewtapNumber()
         {
 
 
@@ -43,7 +43,7 @@ namespace NeuroTrainer.ViewModel
             tokenNumber.Cancel();
 
         }
-        public static void newtapImage()
+        public static void NewtapImage()
         {
 
 
@@ -53,26 +53,26 @@ namespace NeuroTrainer.ViewModel
         }
 
         static Frame _frameColor;
-        public static void newboxColor(Frame frame)
+        public static void NewboxColor(Frame frame)
         {
             _frameColor = new Frame();
             _frameColor = frame;
         }
         static Frame _frameName;
-        public static void newboxName(Frame frame)
+        public static void NewboxName(Frame frame)
         {
             _frameName = new Frame();
             _frameName = frame;
         }
 
         static Frame _frameNumber;
-        public static void newboxNumber(Frame frame)
+        public static void NewboxNumber(Frame frame)
         {
             _frameNumber = new Frame();
             _frameNumber = frame;
         }
         static Label _txt;
-        public static void newlabel(Label txt)
+        public static void Newlabel(Label txt)
         {
             _txt = new Label();
             _txt = txt;
@@ -80,14 +80,14 @@ namespace NeuroTrainer.ViewModel
         static Label _txtNumber;
 
 
-        public static void newlabelNumber(Label txt)
+        public static void NewlabelNumber(Label txt)
         {
             _txtNumber = new Label();
             _txtNumber = txt;
         }
 
         static Image _image;
-        public static void newImage(Image image)
+        public static void NewImage(Image image)
         {
             _image = new Image();
             _image = image;
@@ -96,7 +96,7 @@ namespace NeuroTrainer.ViewModel
         public static bool Mix { get; set; }
         
 
-        public static async Task ExColorWork(List<ColorPalet> list, int interval, int delay, bool speak)
+        public static async Task ExColorWork(List<ColorPalet> list, int interval, int delay, bool speak) 
         {
 
                 
@@ -105,22 +105,24 @@ namespace NeuroTrainer.ViewModel
             _frameNumber.IsVisible = false;
             _frameColor.IsVisible = true;
 
-
             
-            var repeat = interval / delay; ;
-            var figuresnumbers = list.Count;
+            int milliseconds = interval - (int)((double)delay * 1.05);
+            var index = list.Count;
             int randomnumber;
-            int k;
+          
 
             if (Mix == false)
             {
-                for (k = 0; k < repeat; k++)
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (sw.Elapsed.TotalMilliseconds <= milliseconds)
                 {
-                    if (!ViewModel._runThread)
+                    if (!ViewModel.RunThread)
                         return;
 
                     tokenColor = new CancellationTokenSource();
-                    randomnumber = RandomNum.RandomGenerate(figuresnumbers);
+                    randomnumber = RandomNum.RandomGenerate(index);
                     await _frameColor.FadeTo(0,100);
                     await _frameColor.FadeTo(1, 0);
                     _frameColor.BackgroundColor = list[randomnumber].BGColor;
@@ -128,14 +130,13 @@ namespace NeuroTrainer.ViewModel
                     if (speak == true)
                     {
                         if (ViewModel.numberlang == 1)
-                            await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
+                            _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
 
                         if(ViewModel.numberlang == 2)
-                            await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
+                            _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
                     }
 
 
-                    Debug.WriteLine($"Color {k} es : {list[randomnumber].BGColor.ToString()}..... el numero es {randomnumber} //// ");
                     try
                     {
 
@@ -149,6 +150,11 @@ namespace NeuroTrainer.ViewModel
                     }
 
                 }
+                if ((interval - (int)sw.Elapsed.TotalMilliseconds) > 0)
+                {
+                    await Task.Delay((interval - (int)sw.Elapsed.TotalMilliseconds));
+                }
+                sw.Stop();
 
                 _frameNumber.IsVisible = true;
                 _frameColor.IsVisible = false;
@@ -163,17 +169,17 @@ namespace NeuroTrainer.ViewModel
             {
                 
                 tokenColor = new CancellationTokenSource();
-                randomnumber = RandomNum.RandomGenerate(figuresnumbers);
+                randomnumber = RandomNum.RandomGenerate(index);
                 await _frameColor.FadeTo(0, 100);
                 await _frameColor.FadeTo(1, 0);
                 _frameColor.BackgroundColor = list[randomnumber].BGColor;
                 if (speak == true)
                 {
                     if (ViewModel.numberlang == 1)
-                        await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
+                        _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
 
                     if (ViewModel.numberlang == 2)
-                        await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
+                        _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
                 }
 
                 try
@@ -200,16 +206,19 @@ namespace NeuroTrainer.ViewModel
             _frameNumber.IsVisible = false;
             _frameColor.IsVisible = false;
 
-            var repeat = interval / delay;
+            int milliseconds = interval - (int)((double)delay * 1.05);
             var numero = list.Count;
             int randomnumber;
-            int j;
+            
 
             if (Mix == false)
             {
-                for (j = 0; j < repeat; j++)
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (sw.Elapsed.TotalMilliseconds <= milliseconds)
                 {
-                    if (!ViewModel._runThread)
+                    if (!ViewModel.RunThread)
                         return;
 
 
@@ -238,14 +247,14 @@ namespace NeuroTrainer.ViewModel
                     if (speak == true)
                     {
                         if (ViewModel.numberlang == 1)
-                            await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
+                            _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
 
                         if (ViewModel.numberlang == 2)
-                            await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
+                            _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
                     }
                        
 
-                    Debug.WriteLine($"Color {j} es : {list[randomnumber].BGColor.ToString()} .... el numero es {randomnumber} //// ");
+                
                     try
                     {
 
@@ -257,10 +266,18 @@ namespace NeuroTrainer.ViewModel
                     {
                         // Handle when task is cancelled.
                     }
-
-
+                    
 
                 }
+
+                if ((interval - (int)sw.Elapsed.TotalMilliseconds) > 0)
+                {
+                    await Task.Delay((interval - (int)sw.Elapsed.TotalMilliseconds));
+                }
+
+                sw.Stop();
+
+
                 _frameNumber.IsVisible = true;
                 _frameName.IsVisible = false;
                 _txtNumber.TextColor = Color.White;
@@ -300,10 +317,10 @@ namespace NeuroTrainer.ViewModel
                 if (speak == true)
                 {
                     if (ViewModel.numberlang == 1)
-                        await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
+                        _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColorEng);
 
                     if (ViewModel.numberlang == 2)
-                        await CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
+                        _= CrossTextToSpeech.Current.Speak(list[randomnumber].NameColor);
                 }
 
                 try
@@ -330,17 +347,20 @@ namespace NeuroTrainer.ViewModel
             _frameNumber.IsVisible = true;
             _frameColor.IsVisible = false;
 
-            var repeat = interval / delay;
+            int milliseconds = interval - (int)((double)delay * 1.05);
 
-            
+
             int numero = int.Parse(number);
             int randomnumber;
-            int j;
+           
             if (Mix == false)
             {
-                for (j = 0; j < repeat; j++)
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (sw.Elapsed.TotalMilliseconds <= milliseconds)
                 {
-                    if (!ViewModel._runThread)
+                    if (!ViewModel.RunThread)
                         return;
                     randomnumber = RandomNum.RandomGenerateWithoutZero(numero + 1);
                     tokenNumber = new CancellationTokenSource();
@@ -351,11 +371,8 @@ namespace NeuroTrainer.ViewModel
                     _txtNumber.Text = randomnumber.ToString();
 
                     if (speak == true)
-                        await CrossTextToSpeech.Current.Speak(randomnumber.ToString());
-
-                    Debug.WriteLine($"En {j}  .... el numero es {randomnumber} //// ");
-
-
+                        _= CrossTextToSpeech.Current.Speak(randomnumber.ToString());
+                    
                     try
                     {
 
@@ -369,10 +386,15 @@ namespace NeuroTrainer.ViewModel
                     }
 
 
-                    _txt.Text = null;
-                    await Task.Delay(delay / 100);
-
+                   
                 }
+                if ((interval - (int)sw.Elapsed.TotalMilliseconds) > 0)
+                {
+                    await Task.Delay((interval - (int)sw.Elapsed.TotalMilliseconds));
+                }
+
+                sw.Stop();
+
                 _txtNumber.Scale = 5;
                 if (ViewModel.numberlang == 1)
                     _txtNumber.Text = "REST";
@@ -390,7 +412,7 @@ namespace NeuroTrainer.ViewModel
                 _txtNumber.Text = randomnumber.ToString();
 
                 if (speak == true)
-                    await CrossTextToSpeech.Current.Speak(randomnumber.ToString());
+                    _= CrossTextToSpeech.Current.Speak(randomnumber.ToString());
 
                 try
                 {
@@ -404,11 +426,7 @@ namespace NeuroTrainer.ViewModel
                     // Handle when task is cancelled.
                 }
 
-
-                _txt.Text = null;
-                await Task.Delay(delay / 100);
-
-
+                
             }
 
         }
@@ -420,16 +438,18 @@ namespace NeuroTrainer.ViewModel
             _frameNumber.IsVisible = false;
             _frameColor.IsVisible = false;
 
-            var repeat = interval / delay;
-
-            int z;
+            int milliseconds = interval - (int)((double) delay * 1.05);
             int randomnumber;
 
             if (Mix == false)
             {
-                for (z = 0; z < repeat; z++)
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (sw.Elapsed.TotalMilliseconds <= milliseconds)
                 {
-                    if (!ViewModel._runThread)
+                    Debug.WriteLine("1." + (sw.Elapsed.TotalMilliseconds).ToString());
+                    if (!ViewModel.RunThread)
                         return;
                     tokenImage = new CancellationTokenSource();
                     randomnumber = RandomNum.RandomGenerateWithoutZero(7);
@@ -442,12 +462,12 @@ namespace NeuroTrainer.ViewModel
                         {
                             if (ViewModel.numberlang == 1)
                             {
-                                await CrossTextToSpeech.Current.Speak("Left");
+                                _ = CrossTextToSpeech.Current.Speak("Left");
 
                             }
                             if (ViewModel.numberlang == 2)
                             {
-                                await CrossTextToSpeech.Current.Speak("Izquierda");
+                                _ = CrossTextToSpeech.Current.Speak("Izquierda");
 
                             }
 
@@ -462,12 +482,12 @@ namespace NeuroTrainer.ViewModel
                         {
                             if (ViewModel.numberlang == 1)
                             {
-                                await CrossTextToSpeech.Current.Speak("Right");
+                                _ =  CrossTextToSpeech.Current.Speak("Right");
 
                             }
                             if (ViewModel.numberlang == 2)
                             {
-                                await CrossTextToSpeech.Current.Speak("Derecha");
+                                _ = CrossTextToSpeech.Current.Speak("Derecha");
 
                             }
 
@@ -481,12 +501,12 @@ namespace NeuroTrainer.ViewModel
                         {
                             if (ViewModel.numberlang == 1)
                             {
-                                await CrossTextToSpeech.Current.Speak("Down");
+                                _ = CrossTextToSpeech.Current.Speak("Down");
 
                             }
                             if (ViewModel.numberlang == 2)
                             {
-                                await CrossTextToSpeech.Current.Speak("Abajo");
+                                _ = CrossTextToSpeech.Current.Speak("Abajo");
 
                             }
 
@@ -500,12 +520,12 @@ namespace NeuroTrainer.ViewModel
                         {
                             if (ViewModel.numberlang == 1)
                             {
-                                await CrossTextToSpeech.Current.Speak("Up");
+                                _ = CrossTextToSpeech.Current.Speak("Up");
 
                             }
                             if (ViewModel.numberlang == 2)
                             {
-                                await CrossTextToSpeech.Current.Speak("Arriba");
+                                _ = CrossTextToSpeech.Current.Speak("Arriba");
 
                             }
 
@@ -519,12 +539,12 @@ namespace NeuroTrainer.ViewModel
                         {
                             if (ViewModel.numberlang == 1)
                             {
-                                await CrossTextToSpeech.Current.Speak("Down Up");
+                                _ = CrossTextToSpeech.Current.Speak("Down Up");
 
                             }
                             if (ViewModel.numberlang == 2)
                             {
-                                await CrossTextToSpeech.Current.Speak("Abajo Arriba");
+                                _ = CrossTextToSpeech.Current.Speak("Abajo Arriba");
 
                             }
 
@@ -537,20 +557,18 @@ namespace NeuroTrainer.ViewModel
                         {
                             if (ViewModel.numberlang == 1)
                             {
-                                await CrossTextToSpeech.Current.Speak("Up Down");
+                                _ = CrossTextToSpeech.Current.Speak("Up Down");
 
                             }
                             if (ViewModel.numberlang == 2)
                             {
-                                await CrossTextToSpeech.Current.Speak("Arriba Abajo");
+                                _ = CrossTextToSpeech.Current.Speak("Arriba Abajo");
 
                             }
 
                         }
                     }
-
-                    Debug.WriteLine($"En {z}  .... el numero es {randomnumber} //// ");
-
+                    Debug.WriteLine("2." + (sw.Elapsed.TotalMilliseconds).ToString());
 
                     try
                     {
@@ -565,6 +583,14 @@ namespace NeuroTrainer.ViewModel
                     }
 
                 }
+                Debug.WriteLine((interval - (int)sw.Elapsed.TotalMilliseconds).ToString());
+
+                if ((interval - (int)sw.Elapsed.TotalMilliseconds) > 0)
+                {
+                    await Task.Delay((interval - (int)sw.Elapsed.TotalMilliseconds));
+                }
+                
+                sw.Stop();
 
                 _image.IsVisible = false;
                 _frameNumber.IsVisible = true;
@@ -695,6 +721,8 @@ namespace NeuroTrainer.ViewModel
                     }
                 }
 
+             
+
                 try
                 {
 
@@ -719,17 +747,20 @@ namespace NeuroTrainer.ViewModel
             _frameNumber.IsVisible = true;
             _frameColor.IsVisible = false;
 
-            var repeat = interval / delay;
-            
+            int milliseconds = interval - (int)((double)delay * 1.05);
+
 
             int numberrand;
             List<string> vocal = new List<string>() { "A", "E", "I", "O", "U" };
-            int j;
+          
             if (Mix == false)
             {
-                for (j = 0; j < repeat; j++)
+                Stopwatch sw = new Stopwatch();
+                sw.Start();
+
+                while (sw.Elapsed.TotalMilliseconds <= milliseconds)
                 {
-                    if (!ViewModel._runThread)
+                    if (!ViewModel.RunThread)
                         return;
                     tokenNumber = new CancellationTokenSource();
                     numberrand = RandomNum.RandomGenerateWithoutZero(6);
@@ -768,10 +799,8 @@ namespace NeuroTrainer.ViewModel
                     }
 
                     if (speak == true)
-                        await CrossTextToSpeech.Current.Speak(vocal[numberrand - 1]);
+                        _= CrossTextToSpeech.Current.Speak(vocal[numberrand - 1]);
 
-
-                    Debug.WriteLine($"En {j}  .... La vocal es {vocal[numberrand - 1]} //// ");
 
                     try
                     {
@@ -784,13 +813,18 @@ namespace NeuroTrainer.ViewModel
                     {
                         // Handle when task is cancelled.
                     }
-
-
-                    _txt.Text = null;
-                    await Task.Delay(delay / 100);
-
+                    
 
                 }
+
+                if ((interval - (int)sw.Elapsed.TotalMilliseconds) > 0)
+                {
+                    await Task.Delay((interval - (int)sw.Elapsed.TotalMilliseconds));
+                }
+
+                sw.Stop();
+
+
                 _txtNumber.Scale = 5;
                 if (ViewModel.numberlang == 1)
                     _txtNumber.Text = "REST";
@@ -836,7 +870,7 @@ namespace NeuroTrainer.ViewModel
                 }
 
                 if (speak == true)
-                    await CrossTextToSpeech.Current.Speak(vocal[numberrand - 1]);
+                    _= CrossTextToSpeech.Current.Speak(vocal[numberrand - 1]);
 
                 try
                 {
@@ -856,12 +890,16 @@ namespace NeuroTrainer.ViewModel
         public static async Task ExMix(List<ColorPalet> list, int interval, int delay, bool speak, string number)
         {
             Mix = true;
-            var repeat = interval / delay;
+
+            int milliseconds = interval - (int)((double)delay * 1.05);
             int NumberRand;
-            int j;
-            for (j = 0; j < repeat; j++)
+
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+
+            while (sw.Elapsed.TotalMilliseconds <= milliseconds)
             {
-                if (!ViewModel._runThread)
+                if (!ViewModel.RunThread)
                     return;
                 NumberRand = RandomNum.RandomGenerateWithoutZero(6);
 
@@ -901,8 +939,15 @@ namespace NeuroTrainer.ViewModel
                 }
 
 
-                Debug.WriteLine($"En {j}  .... el numero en Mixto es {NumberRand} //// ");
+          
             }
+
+            if ((interval - (int)sw.Elapsed.TotalMilliseconds) > 0)
+            {
+                await Task.Delay((interval - (int)sw.Elapsed.TotalMilliseconds));
+            }
+
+            sw.Stop();
 
             Mix = false;
             _image.IsVisible = false;

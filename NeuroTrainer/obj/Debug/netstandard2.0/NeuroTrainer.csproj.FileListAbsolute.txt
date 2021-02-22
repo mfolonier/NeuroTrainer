@@ -13,3 +13,18 @@ C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.dll
 C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\ref\NeuroTrainer.dll
 C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.pdb
 C:\Xamarin\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.csprojAssemblyReference.cache
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\bin\Debug\netstandard2.0\NeuroTrainer.deps.json
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\bin\Debug\netstandard2.0\NeuroTrainer.dll
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\bin\Debug\netstandard2.0\ref\NeuroTrainer.dll
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\bin\Debug\netstandard2.0\NeuroTrainer.pdb
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.csprojAssemblyReference.cache
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\View\Setting.xaml.g.cs
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\View\Training.xaml.g.cs
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.AssemblyInfoInputs.cache
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.AssemblyInfo.cs
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.dll
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\ref\NeuroTrainer.dll
+C:\Xamarin\Proyecto Neuro\NeuroTrainer\NeuroTrainer\obj\Debug\netstandard2.0\NeuroTrainer.pdb

@@ -24,18 +24,18 @@ namespace NeuroTrainer.View
             InitializeComponent();
             BindingContext = vm;
             //Paso Color
-            ColorWork.newboxColor(FrameboxColor);
+            ColorWork.NewboxColor(FrameboxColor);
 
             // Paso Color y nombre 
-            ColorWork.newboxName(FrameboxName);
-            ColorWork.newlabel(TxtBox);
+            ColorWork.NewboxName(FrameboxName);
+            ColorWork.Newlabel(TxtBox);
 
             //Paso Numero
-            ColorWork.newboxNumber(FrameboxNumber);
-            ColorWork.newlabelNumber(TxtNumber);
+            ColorWork.NewboxNumber(FrameboxNumber);
+            ColorWork.NewlabelNumber(TxtNumber);
 
             // Paso Flecha
-            ColorWork.newImage(ImageArrow);
+            ColorWork.NewImage(ImageArrow);
 
 
 
@@ -47,10 +47,10 @@ namespace NeuroTrainer.View
 
        
 
-        private void TapColor(object sender, EventArgs e) => ColorWork.newtapColor();
-        private void TapName(object sender, EventArgs e) => ColorWork.newtapName();
-        private void TapNumber(object sender, EventArgs e) => ColorWork.newtapNumber();
-        private void TapImage(object sender, EventArgs e) => ColorWork.newtapImage();
+        private void TapColor(object sender, EventArgs e) => ColorWork.NewtapColor();
+        private void TapName(object sender, EventArgs e) => ColorWork.NewtapName();
+        private void TapNumber(object sender, EventArgs e) => ColorWork.NewtapNumber();
+        private void TapImage(object sender, EventArgs e) => ColorWork.NewtapImage();
 
     }
 }

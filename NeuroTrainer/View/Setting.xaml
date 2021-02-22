@@ -106,11 +106,11 @@
                         <Switch x:Name="Switch" Toggled="Switch_Toggled" HorizontalOptions="Start"  OnColor="#6ca931" Grid.Row="7" Grid.Column="0" ThumbColor="Gray" />
                         <Label Text="{Binding Txtsound}"  TranslationX="50" TranslationY="12" HorizontalOptions="Start" Grid.Row="7" Grid.Column="0"/>
                         <Label Text="{Binding Txttime}" FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="8" Grid.Column="0"/>
-                        <Label Text="{Binding TimeWorkString}" TranslationX="100"  FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="8" Grid.Column="0"/>
+                        <Label Text="{Binding TimeWorkString}" TranslationX="120"  FontSize="Medium" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" Grid.Row="8" Grid.Column="0"/>
 
                         <Button x:Name="BtnAdd" Text="{Binding BtnAddtxt}" Command="{Binding CmdAdd}" HorizontalOptions="StartAndExpand" VerticalOptions="Fill" BorderColor="Black" BorderWidth="1" BackgroundColor="#6ca931" CornerRadius="15" Grid.Row="8" Grid.Column="1"/>
                         <Button x:Name="BtnClear" Text="{Binding BtnSettxt}" Command="{Binding CmdClear}" HorizontalOptions="Start" VerticalOptions="Fill" BorderColor="Black" BorderWidth="1" BackgroundColor="#6ca931" CornerRadius="15" Grid.Row="9" Grid.Column="0" />
-                        <Button Text="{Binding BtnStarttxt}" FontSize="Body" FontAttributes="Bold" Command="{Binding cmdStart}" BorderColor="Black" BorderWidth="1" BackgroundColor="#27AE60" HorizontalOptions="StartAndExpand" VerticalOptions="Center" CornerRadius="15" Grid.Row="9" Grid.Column="1" />
+                        <Button Text="{Binding BtnStarttxt}" FontSize="Body" FontAttributes="Bold" Command="{Binding CmdStart}" BorderColor="Black" BorderWidth="1" BackgroundColor="#27AE60" HorizontalOptions="StartAndExpand" VerticalOptions="Center" CornerRadius="15" Grid.Row="9" Grid.Column="1" />
 
                         <controls:AdControlView Grid.Row="10" Grid.ColumnSpan="2"  AdUnitId="ca-app-pub-9333529972312529/9787674777" HorizontalOptions="StartAndExpand"/>
 

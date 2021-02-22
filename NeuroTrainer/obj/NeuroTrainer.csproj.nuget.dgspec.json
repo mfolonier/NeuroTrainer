@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Xamarin\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj": {}
+    "C:\\Xamarin\\Proyecto Neuro\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj": {}
   },
   "projects": {
-    "C:\\Xamarin\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj": {
+    "C:\\Xamarin\\Proyecto Neuro\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Xamarin\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj",
+        "projectUniqueName": "C:\\Xamarin\\Proyecto Neuro\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj",
         "projectName": "NeuroTrainer",
-        "projectPath": "C:\\Xamarin\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj",
+        "projectPath": "C:\\Xamarin\\Proyecto Neuro\\NeuroTrainer\\NeuroTrainer\\NeuroTrainer.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Xamarin\\NeuroTrainer\\NeuroTrainer\\obj\\",
+        "outputPath": "C:\\Xamarin\\Proyecto Neuro\\NeuroTrainer\\NeuroTrainer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

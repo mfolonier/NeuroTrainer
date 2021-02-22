@@ -32,7 +32,7 @@ namespace NeuroTrainer.View
 
             base.OnAppearing();
 
-            ViewModel.ViewModel._runThread = false;
+            ViewModel.ViewModel.RunThread = false; // To stop program when the user press back button
 
            
                       

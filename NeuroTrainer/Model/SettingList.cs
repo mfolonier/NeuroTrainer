@@ -28,7 +28,10 @@ namespace NeuroTrainer.Model
     {
         public int Time { get; set; }
         public int Rests { get; set; }
-        public int delay { get; set; }
+        public int Delay { get; set; }
+        public TimeSpan Time2 { get; set; }
+        public TimeSpan Rests2 { get; set; }
+        public TimeSpan Delay2 { get; set; }
         public string Value { get; set; }
         public bool SwitchState { get; set; }
     }
