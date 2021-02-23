@@ -21,7 +21,7 @@ namespace NeuroTrainer.Droid
            
             base.OnCreate(savedInstanceState);
 
-            MobileAds.Initialize(ApplicationContext, "ca-app-pub-9333529972312529~7628415299");
+            MobileAds.Initialize(ApplicationContext, "ca-app-pub-xxxxx");//Your admob account 
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
